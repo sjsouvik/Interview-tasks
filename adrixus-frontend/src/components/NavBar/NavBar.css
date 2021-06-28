@@ -15,3 +15,12 @@
   text-decoration: none;
   color: var(--primary-color);
 }
+
+.nav-text {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.nav-image {
+  height: 1.5rem;
+}

@@ -21,8 +21,8 @@ const NavBar = () => {
       <ul className="nav-menu">
         <li className="nav-item">
           <Link to={authToken ? "/" : "/login"}>
-            <img src={person} alt="icon-user" style={{ height: "1.5rem" }} />
-            <div style={{ fontSize: "0.85rem", letterSpacing: "1px" }}>
+            <img src={person} alt="icon-user" className="nav-image" />
+            <div className="nav-text">
               {authToken ? "Hi, " + authUser?.firstName : "Login"}
             </div>
           </Link>
@@ -34,10 +34,8 @@ const NavBar = () => {
             style={{ cursor: "pointer" }}
             onClick={logout}
           >
-            <img src={Logout} alt="icon-logout" style={{ height: "1.5rem" }} />
-            <div style={{ fontSize: "0.85rem", letterSpacing: "1px" }}>
-              Logout
-            </div>
+            <img src={Logout} alt="icon-logout" className="nav-image" />
+            <div className="nav-text">Logout</div>
           </li>
         )}
       </ul>
