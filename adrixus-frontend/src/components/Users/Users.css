@@ -1,0 +1,25 @@
+.users {
+  width: 80%;
+  margin: auto;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+}
+
+.empty-list {
+  width: 40%;
+  margin: auto;
+}
