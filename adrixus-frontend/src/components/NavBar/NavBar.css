@@ -1,0 +1,26 @@
+.adrixus-navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.adrixus-navigation a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.nav-text {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+.nav-image {
+  height: 1.5rem;
+}
