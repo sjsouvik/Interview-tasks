@@ -3,3 +3,4 @@ node_modules
 build
 
 sundew-frontend/yarn.lock
+admin-ui/yarn.lock

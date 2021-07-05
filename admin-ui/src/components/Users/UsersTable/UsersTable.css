@@ -1,0 +1,38 @@
+table {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.input-table {
+  border: 0;
+  padding: 0.5rem;
+  outline: none;
+}
+
+.edit-input {
+  border: 1px solid black;
+  padding: 0.75rem;
+}
+
+.selected {
+  background-color: #cbd5e0;
+}
+
+.action-icon {
+  height: 1.5rem;
+  padding: 0 0.75rem;
+  cursor: pointer;
+}

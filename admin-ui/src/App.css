@@ -1,0 +1,28 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+}
+
+.page-navigation {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+}
+
+.link-active {
+  font-weight: bold;
+}
+
+.page-navigation li:hover {
+  text-decoration: underline;
+}
+
+main {
+  position: relative;
+  top: 8rem;
+}
