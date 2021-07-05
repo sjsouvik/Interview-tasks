@@ -1,6 +1,12 @@
 import "./Pagination.css";
 
-const Pagination = ({ totalUsers, usersPerPage, currentPage, paginate }) => {
+const Pagination = ({
+  totalUsers,
+  usersPerPage,
+  currentPage,
+  paginate,
+  dispatch,
+}) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
@@ -10,6 +16,36 @@ const Pagination = ({ totalUsers, usersPerPage, currentPage, paginate }) => {
   return (
     <nav className="pagination">
       <ul className="page-number">
+        <li>
+          <button
+            className="btn btn-primary"
+            onClick={() => dispatch({ type: "DELETE_USERS" })}
+          >
+            Delete Selected
+          </button>
+        </li>
+        <li className="page-number-list">
+          <a
+            href="#"
+            className={
+              currentPage === 1 ? "next-link btn-disable" : "next-link"
+            }
+            onClick={() => paginate(1)}
+          >
+            {"<<"}
+          </a>
+        </li>
+        <li className="page-number-list">
+          <a
+            href="#"
+            className={
+              currentPage === 1 ? "next-link btn-disable" : "next-link"
+            }
+            onClick={() => paginate(currentPage - 1)}
+          >
+            {"<"}
+          </a>
+        </li>
         {pageNumbers.map((number) => (
           <li
             key={number}
@@ -26,6 +62,32 @@ const Pagination = ({ totalUsers, usersPerPage, currentPage, paginate }) => {
             </a>
           </li>
         ))}
+        <li className="page-number-list">
+          <a
+            href="#"
+            className={
+              currentPage === pageNumbers.length
+                ? "next-link btn-disable"
+                : "next-link"
+            }
+            onClick={() => paginate(currentPage + 1)}
+          >
+            {">"}
+          </a>
+        </li>
+        <li className="page-number-list">
+          <a
+            href="#"
+            className={
+              currentPage === pageNumbers.length
+                ? "next-link btn-disable"
+                : "next-link"
+            }
+            onClick={() => paginate(pageNumbers.length)}
+          >
+            {">>"}
+          </a>
+        </li>
       </ul>
     </nav>
   );

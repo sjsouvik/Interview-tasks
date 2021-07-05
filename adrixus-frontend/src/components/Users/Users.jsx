@@ -3,7 +3,7 @@ import { useReducer } from "react";
 import Empty from "../../assets/empty.svg";
 
 import Loader from "../Loader/Loader";
-import UsersTable from "./UsersTable";
+import UsersTable from "./UsersTable/UsersTable";
 import Pagination from "../Pagination/Pagination";
 
 import { useGetData } from "../../server/useGetData";
@@ -47,7 +47,7 @@ const Users = () => {
         type="text"
         value={searchText}
         className="form-control"
-        placeholder="Search User"
+        placeholder="Search by name, email or role"
         onChange={(e) =>
           dispatch({
             type: "ASSIGN_DATA",
@@ -61,6 +61,7 @@ const Users = () => {
 
       <UsersTable
         users={filteredUsers.slice(indexOfFirstRecord, indexOfLastRecord)}
+        dispatch={dispatch}
       />
 
       {!(loading || error) && filteredUsers.length === 0 && (
@@ -80,6 +81,7 @@ const Users = () => {
         usersPerPage={usersPerPage}
         currentPage={currentPage}
         paginate={changePage}
+        dispatch={dispatch}
       />
     </div>
   );
