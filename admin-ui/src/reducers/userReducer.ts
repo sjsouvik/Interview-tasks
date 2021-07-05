@@ -1,4 +1,5 @@
 import { InitialState, Action } from "./userReducer.types";
+import { User } from "../components/Users/Users.types";
 
 import { isAllSelected } from "../components/Users/UsersTable/UsersTable";
 
@@ -19,10 +20,13 @@ export const userReducer = (
       return { ...state, [action.payload.name]: action.payload.data };
 
     case "SELECT_OR_UNSELECT_ALL_ROWS":
+      const isTheRecordClicked = (users: User[], userId: number) =>
+        users.find((user) => user.id === userId);
+
       return {
         ...state,
         users: state.users.map((user) =>
-          action.payload.users.find((payloadUser) => payloadUser.id === user.id)
+          isTheRecordClicked(action.payload.users, user.id)
             ? {
                 ...user,
                 selected:

@@ -13,3 +13,11 @@ cd admin-ui
 npm install
 npm start
 ```
+
+## Run Tests
+
+To run the tests, execute
+
+```
+npm test
+```
