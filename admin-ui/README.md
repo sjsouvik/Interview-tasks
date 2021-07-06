@@ -21,3 +21,17 @@ To run the tests, execute
 ```
 npm test
 ```
+
+## Build the app for production
+
+To build the app for the production, execute
+
+```
+npm run-script build
+```
+
+## Hosted application
+
+Open the URL to see the hosted application
+
+[Admin UI](https://admin-ui-geektrust.netlify.app)
