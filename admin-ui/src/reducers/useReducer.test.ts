@@ -62,7 +62,7 @@ describe("testing initializing data feature", () => {
 });
 
 describe("testing select or unselect rows feature", () => {
-  test("should select or unselect if selected before when SELECT_OR_UNSELECT_ALL_ROWS action is dispatched", () => {
+  test("should select or unselect if selected before when SELECT_OR_UNSELECT_ROW action is dispatched", () => {
     const userState = {
       users: [
         {
@@ -91,7 +91,7 @@ describe("testing select or unselect rows feature", () => {
     };
 
     let action: Action = {
-      type: "SELECT_OR_UNSELECT_ALL_ROWS",
+      type: "SELECT_OR_UNSELECT_ROW",
       payload: {
         users: [
           {
@@ -144,7 +144,7 @@ describe("testing select or unselect rows feature", () => {
 });
 
 describe("testing ready to edit feature", () => {
-  test("should make one record enable or disable to edit when READY_TO_EDIT action is dispatched", () => {
+  test("should make one record enable or disable to edit when ENABLE_OR_DISABLE_TO_EDIT action is dispatched", () => {
     const userState = {
       users: [
         {
@@ -167,7 +167,7 @@ describe("testing ready to edit feature", () => {
     };
 
     let action: Action = {
-      type: "READY_TO_EDIT",
+      type: "ENABLE_OR_DISABLE_TO_EDIT",
       payload: { userId: 1 },
     };
 
@@ -196,7 +196,7 @@ describe("testing ready to edit feature", () => {
     });
 
     action = {
-      type: "READY_TO_EDIT",
+      type: "ENABLE_OR_DISABLE_TO_EDIT",
       payload: { userId: 1 },
     };
 

@@ -31,14 +31,14 @@ const UsersTable = ({
     setEmail(user.email);
     setRole(user.role);
     dispatch({
-      type: "READY_TO_EDIT",
+      type: "ENABLE_OR_DISABLE_TO_EDIT",
       payload: { userId: user.id },
     });
   };
 
   const updateHandler = (userId: number) => {
     dispatch({
-      type: "READY_TO_EDIT",
+      type: "ENABLE_OR_DISABLE_TO_EDIT",
       payload: { userId },
     });
     dispatch({
@@ -58,7 +58,7 @@ const UsersTable = ({
               checked={isAllSelected(users)}
               onChange={() =>
                 dispatch({
-                  type: "SELECT_OR_UNSELECT_ALL_ROWS",
+                  type: "SELECT_OR_UNSELECT_ROW",
                   payload: { users },
                 })
               }
@@ -80,7 +80,7 @@ const UsersTable = ({
                 checked={user.selected}
                 onChange={() =>
                   dispatch({
-                    type: "SELECT_OR_UNSELECT_ALL_ROWS",
+                    type: "SELECT_OR_UNSELECT_ROW",
                     payload: { users: [user] },
                   })
                 }

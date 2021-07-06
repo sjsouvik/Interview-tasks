@@ -1,4 +1,4 @@
-import { Dispatch } from "react";
+import { Dispatch, useEffect } from "react";
 import { Action } from "../../reducers/userReducer.types";
 
 import "./Pagination.css";
@@ -23,6 +23,12 @@ const Pagination = ({
   for (let i = 1; i <= Math.ceil(totalUsers / usersPerPage); i++) {
     pageNumbers.push(i);
   }
+
+  useEffect(() => {
+    if (pageNumbers.length > 0 && currentPage > pageNumbers.length) {
+      paginate(pageNumbers.length);
+    }
+  }, [pageNumbers]);
 
   return (
     <nav className="pagination">

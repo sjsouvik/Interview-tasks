@@ -19,7 +19,7 @@ export const userReducer = (
     case "ASSIGN_DATA":
       return { ...state, [action.payload.name]: action.payload.data };
 
-    case "SELECT_OR_UNSELECT_ALL_ROWS":
+    case "SELECT_OR_UNSELECT_ROW":
       const isTheRecordClicked = (users: User[], userId: number) =>
         users.find((user) => user.id === userId);
 
@@ -38,7 +38,7 @@ export const userReducer = (
         ),
       };
 
-    case "READY_TO_EDIT":
+    case "ENABLE_OR_DISABLE_TO_EDIT":
       return {
         ...state,
         users: state.users.map((user) =>

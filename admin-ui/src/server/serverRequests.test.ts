@@ -52,4 +52,21 @@ describe("testing get user service", () => {
       statusCode: 200,
     });
   });
+
+  test("should return status code when API call fails", async () => {
+    mockedAxios.get.mockRejectedValue({
+      response: {
+        status: 400,
+      },
+    });
+
+    const request = {
+      requestType: "get",
+      url: "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json",
+    };
+
+    const serverResponse = await serverRequests(request);
+
+    expect(serverResponse).toEqual({ response: undefined, statusCode: 400 });
+  });
 });

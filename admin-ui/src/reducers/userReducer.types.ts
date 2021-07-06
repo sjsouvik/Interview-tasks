@@ -16,8 +16,8 @@ export type Action =
         data: User[] | number | string | boolean | undefined;
       };
     }
-  | { type: "SELECT_OR_UNSELECT_ALL_ROWS"; payload: { users: User[] } }
-  | { type: "READY_TO_EDIT"; payload: { userId: number } }
+  | { type: "SELECT_OR_UNSELECT_ROW"; payload: { users: User[] } }
+  | { type: "ENABLE_OR_DISABLE_TO_EDIT"; payload: { userId: number } }
   | {
       type: "UPDATE_USER";
       payload: { userId: number; name: string; email: string; role: string };
