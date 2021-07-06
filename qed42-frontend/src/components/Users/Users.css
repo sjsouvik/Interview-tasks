@@ -1,0 +1,14 @@
+.btns {
+  display: flex;
+  align-items: center;
+}
+
+.users {
+  width: 80%;
+  margin: auto;
+}
+
+.empty-list {
+  width: 40%;
+  margin: auto;
+}
