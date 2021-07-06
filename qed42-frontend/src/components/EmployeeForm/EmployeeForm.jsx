@@ -29,6 +29,14 @@ const EmployeeForm = ({ projects, openModal, dispatch }) => {
     localStorage?.setItem("data", JSON.stringify(updatedData));
   };
 
+  const projectSelectHandler = (e) => {
+    if (e.target.value !== "Select Project") {
+      return setProject(e.target.value);
+    }
+
+    setProject("");
+  };
+
   return (
     <div style={{ padding: "1rem" }}>
       <h3>Add Employee</h3>
@@ -56,11 +64,8 @@ const EmployeeForm = ({ projects, openModal, dispatch }) => {
       <select
         name="projects"
         className="form-control"
-        onChange={(e) => {
-          if (e.target.value !== "Select Project") {
-            setProject(e.target.value);
-          }
-        }}
+        value={project}
+        onChange={projectSelectHandler}
       >
         <option>Select Project</option>
         {projects.map((project) => (
