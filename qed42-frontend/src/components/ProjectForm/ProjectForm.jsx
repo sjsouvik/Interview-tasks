@@ -11,6 +11,9 @@ const ProjectForm = ({ openModal, dispatch }) => {
       payload: { title, projectKey },
     });
 
+    setTitle("");
+    setProjectKey("");
+
     const data = JSON.parse(localStorage?.getItem("data")) || {
       users: [],
       projects: [],

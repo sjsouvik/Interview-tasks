@@ -8,10 +8,15 @@ const EmployeeForm = ({ projects, openModal, dispatch }) => {
 
   const saveDataHandler = () => {
     openModal(false);
+
     dispatch({
       type: "ADD_EMPLOYEE",
       payload: { name, email, phone, project },
     });
+    setName("");
+    setEmail("");
+    setPhone("");
+    setProject("");
 
     const data = JSON.parse(localStorage?.getItem("data")) || {
       users: [],
@@ -51,8 +56,13 @@ const EmployeeForm = ({ projects, openModal, dispatch }) => {
       <select
         name="projects"
         className="form-control"
-        onChange={(e) => setProject(e.target.value)}
+        onChange={(e) => {
+          if (e.target.value !== "Select Project") {
+            setProject(e.target.value);
+          }
+        }}
       >
+        <option>Select Project</option>
         {projects.map((project) => (
           <option>{project.title}</option>
         ))}
