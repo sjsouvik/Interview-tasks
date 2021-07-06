@@ -1,7 +1,7 @@
 import { InitialState, Action } from "./userReducer.types";
 import { User } from "../components/Users/Users.types";
 
-import { isAllSelected } from "../components/Users/UsersTable/UsersTable";
+import { areAllSelected } from "../components/Users/UsersTable/UsersTable";
 
 export const userState: InitialState = {
   users: [],
@@ -30,7 +30,7 @@ export const userReducer = (
             ? {
                 ...user,
                 selected:
-                  user.selected && isAllSelected(action.payload.users)
+                  user.selected && areAllSelected(action.payload.users)
                     ? false
                     : true,
               }

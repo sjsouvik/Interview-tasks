@@ -9,10 +9,13 @@ import { Action } from "../../../reducers/userReducer.types";
 
 import "./UsersTable.css";
 
-export const isAllSelected = (users: User[]) => {
-  return users.reduce((allSelected, user) => {
-    return allSelected && user.selected !== undefined && user.selected;
-  }, true);
+export const areAllSelected = (users: User[]) => {
+  return (
+    users.length > 0 &&
+    users.reduce((allSelected, user) => {
+      return allSelected && user.selected !== undefined && user.selected;
+    }, true)
+  );
 };
 
 const UsersTable = ({
@@ -55,7 +58,7 @@ const UsersTable = ({
             <input
               type="checkbox"
               name="selectAll"
-              checked={isAllSelected(users)}
+              checked={areAllSelected(users)}
               onChange={() =>
                 dispatch({
                   type: "SELECT_OR_UNSELECT_ROW",
