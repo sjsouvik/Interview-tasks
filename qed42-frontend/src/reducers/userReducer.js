@@ -25,6 +25,9 @@ export const userState = {
 
 export const userReducer = (state, { type, payload }) => {
   switch (type) {
+    case "ASSIGN_DATA":
+      return { ...state, [payload.name]: payload.data };
+
     case "ADD_EMPLOYEE":
       return { ...state, users: [...state.users, payload] };
 

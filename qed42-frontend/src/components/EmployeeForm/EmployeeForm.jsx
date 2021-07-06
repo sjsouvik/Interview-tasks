@@ -12,6 +12,16 @@ const EmployeeForm = ({ projects, openModal, dispatch }) => {
       type: "ADD_EMPLOYEE",
       payload: { name, email, phone, project },
     });
+
+    const data = JSON.parse(localStorage?.getItem("data")) || {
+      users: [],
+      projects: [],
+    };
+    const updatedData = {
+      ...data,
+      users: [...data.users, { name, email, phone, project }],
+    };
+    localStorage?.setItem("data", JSON.stringify(updatedData));
   };
 
   return (

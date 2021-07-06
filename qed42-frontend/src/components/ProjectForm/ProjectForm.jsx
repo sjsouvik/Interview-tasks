@@ -10,6 +10,16 @@ const ProjectForm = ({ openModal, dispatch }) => {
       type: "ADD_PROJECT",
       payload: { title, projectKey },
     });
+
+    const data = JSON.parse(localStorage?.getItem("data")) || {
+      users: [],
+      projects: [],
+    };
+    const updatedData = {
+      ...data,
+      projects: [...data.projects, { title, projectKey }],
+    };
+    localStorage?.setItem("data", JSON.stringify(updatedData));
   };
 
   return (
