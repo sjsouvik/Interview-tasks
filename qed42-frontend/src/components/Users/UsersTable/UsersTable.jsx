@@ -7,7 +7,8 @@ const UsersTable = ({ users }) => {
     <div>
       {users.length === 0 && (
         <div style={{ padding: "1rem" }}>
-          <h3>No Employees found</h3>
+          <h3>No Employees found, Please add employees</h3>
+          <p>Note: Don't forget to add projects before adding employees</p>
           <img src={empty} alt="empty-list" className="empty-list" />
         </div>
       )}
