@@ -68,8 +68,8 @@ const EmployeeForm = ({ projects, openModal, dispatch }) => {
         onChange={projectSelectHandler}
       >
         <option>Select Project</option>
-        {projects.map((project) => (
-          <option>{project.title}</option>
+        {projects.map((project, index) => (
+          <option key={index}>{project.title}</option>
         ))}
       </select>
 
