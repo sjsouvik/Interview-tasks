@@ -31,9 +31,9 @@ const Users = () => {
       payload: { name: "currentPage", data: pageNumber },
     });
 
-  const filterUsers = (users: User[], text: string) => {
+  const filterUsers = (allUsers: User[], text: string) => {
     const searchedText = text.toLowerCase();
-    return users.filter(
+    return allUsers.filter(
       ({ name, email, role }) =>
         name.toLowerCase().includes(searchedText) ||
         email.toLowerCase().includes(searchedText) ||

@@ -30,82 +30,77 @@ const Pagination = ({
     }
   }, [pageNumbers]);
 
+  const classNameForGoPreviousPageBtn = `page-number-list ${
+    currentPage === 1 ? "btn-disable" : ""
+  }`;
+
+  const classNameForGoNextPageBtn = `page-number-list ${
+    currentPage === pageNumbers.length ? "btn-disable" : ""
+  }`;
+
   return (
     <nav className="pagination">
-      <ul className="page-number">
-        <li>
-          <button
-            className="btn btn-primary"
-            onClick={() => dispatch({ type: "DELETE_USERS" })}
-          >
-            Delete Selected
-          </button>
-        </li>
-        <li className="page-number-list">
-          <a
-            href="#"
-            className={
-              currentPage === 1 ? "next-link btn-disable" : "next-link"
-            }
-            onClick={() => paginate(1)}
-          >
-            {"<<"}
-          </a>
-        </li>
-        <li className="page-number-list">
-          <a
-            href="#"
-            className={
-              currentPage === 1 ? "next-link btn-disable" : "next-link"
-            }
-            onClick={() => paginate(currentPage - 1)}
-          >
-            {"<"}
-          </a>
-        </li>
-        {pageNumbers.map((number) => (
-          <li
-            key={number}
-            className={
-              currentPage === number ? "page-number-active" : "page-number-list"
-            }
-          >
+      <button
+        className="btn btn-primary m-0 br-8"
+        onClick={() => dispatch({ type: "DELETE_USERS" })}
+      >
+        Delete Selected
+      </button>
+      <div className="w-80">
+        <ul className="page-number">
+          <li>
             <a
               href="#"
-              className={currentPage === number ? "link" : "next-link"}
-              onClick={() => paginate(number)}
+              className={classNameForGoPreviousPageBtn}
+              onClick={() => paginate(1)}
             >
-              {number}
+              {"<<"}
             </a>
           </li>
-        ))}
-        <li className="page-number-list">
-          <a
-            href="#"
-            className={
-              currentPage === pageNumbers.length
-                ? "next-link btn-disable"
-                : "next-link"
-            }
-            onClick={() => paginate(currentPage + 1)}
-          >
-            {">"}
-          </a>
-        </li>
-        <li className="page-number-list">
-          <a
-            href="#"
-            className={
-              currentPage === pageNumbers.length
-                ? "next-link btn-disable"
-                : "next-link"
-            }
-            onClick={() => paginate(pageNumbers.length)}
-          >
-            {">>"}
-          </a>
-        </li>
-      </ul>
+          <li>
+            <a
+              href="#"
+              className={classNameForGoPreviousPageBtn}
+              onClick={() => paginate(currentPage - 1)}
+            >
+              {"<"}
+            </a>
+          </li>
+
+          {pageNumbers.map((number) => (
+            <li key={number}>
+              <a
+                href="#"
+                className={`page-number-list ${
+                  currentPage === number ? "active" : ""
+                }`}
+                onClick={() => paginate(number)}
+              >
+                {number}
+              </a>
+            </li>
+          ))}
+
+          <li>
+            <a
+              href="#"
+              className={classNameForGoNextPageBtn}
+              onClick={() => paginate(currentPage + 1)}
+            >
+              {">"}
+            </a>
+          </li>
+          <li>
+            <a
+              href="#"
+              className={classNameForGoNextPageBtn}
+              onClick={() => paginate(pageNumbers.length)}
+            >
+              {">>"}
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
