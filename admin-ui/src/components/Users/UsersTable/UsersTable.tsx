@@ -51,10 +51,10 @@ const UsersTable = ({
   };
 
   return (
-    <table>
+    <table className="data-table">
       <thead>
         <tr>
-          <th>
+          <th className="text-center">
             <input
               type="checkbox"
               name="selectAll"
@@ -76,7 +76,7 @@ const UsersTable = ({
       <tbody>
         {users.map((user) => (
           <tr key={user.id} className={user.selected ? "selected" : undefined}>
-            <td>
+            <td className="text-center">
               <input
                 type="checkbox"
                 name="select"

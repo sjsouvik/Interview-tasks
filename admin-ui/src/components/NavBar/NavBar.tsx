@@ -4,10 +4,10 @@ import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <nav className="adrixus-navigation">
-      <div className="brand">
+    <nav className="admin-ui-navigation">
+      <div>
         <h3 className="nav-brand">
-          <Link to="/">Admin-UI</Link>
+          <Link to="/">Admin UI</Link>
         </h3>
       </div>
     </nav>

@@ -48,7 +48,7 @@ const Users = () => {
       <input
         type="text"
         value={searchText}
-        className="form-control"
+        className="form-control search-input"
         placeholder="Search by name, email or role"
         onChange={(e) =>
           dispatch({
