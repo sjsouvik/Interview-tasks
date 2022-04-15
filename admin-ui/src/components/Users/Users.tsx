@@ -23,7 +23,7 @@ const Users = () => {
   const indexOfLastRecord = currentPage * usersPerPage;
   const indexOfFirstRecord = indexOfLastRecord - usersPerPage;
 
-  useGetData(dispatch, "user");
+  useGetData(dispatch);
 
   const changePage = (pageNumber: number) =>
     dispatch({
