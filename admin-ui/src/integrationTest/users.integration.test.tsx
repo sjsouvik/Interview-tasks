@@ -185,4 +185,21 @@ describe("Integration test for users component", () => {
 
     expect(screen.getAllByTestId("pages").length).toBe(1);
   });
+
+  test("should search and show the macthed results", async () => {
+    render(<App />);
+
+    let allUsersNames = await waitFor(() => screen.getAllByTestId("userName"));
+    expect(allUsersNames).toBeDefined();
+
+    const searchInput = screen.getByPlaceholderText(
+      /search by name, email or role/i
+    );
+
+    fireEvent.change(searchInput, { target: { value: "chetan" } });
+
+    allUsersNames = screen.getAllByTestId("userName");
+    expect(allUsersNames.length).toBe(1);
+    expect(allUsersNames[0]).toHaveDisplayValue(users[1].name);
+  });
 });

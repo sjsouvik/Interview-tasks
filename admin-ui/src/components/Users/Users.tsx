@@ -49,7 +49,7 @@ const Users = () => {
         type="text"
         value={searchText}
         className="form-control search-input"
-        placeholder="Search by name, email or role"
+        placeholder="Search by name, email or role..."
         onChange={(e) =>
           dispatch({
             type: "ASSIGN_DATA",
