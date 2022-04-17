@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter as Router } from "react-router-dom";
 
 import "./App.css";
 
@@ -8,16 +8,18 @@ import NotFound from "./components/NotFound/NotFound";
 
 const App = () => {
   return (
-    <div className="App">
-      <NavBar />
+    <Router>
+      <div className="App">
+        <NavBar />
 
-      <main>
-        <Routes>
-          <Route path="/" element={<Users />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-    </div>
+        <main>
+          <Routes>
+            <Route path="/" element={<Users />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+      </div>
+    </Router>
   );
 };
 

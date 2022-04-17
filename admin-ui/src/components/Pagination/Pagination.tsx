@@ -43,6 +43,7 @@ const Pagination = ({
       <button
         className="btn btn-danger m-0 br-32"
         onClick={() => dispatch({ type: "DELETE_USERS" })}
+        data-testid="deleteSelectedBtn"
       >
         Delete Selected
       </button>
@@ -54,6 +55,7 @@ const Pagination = ({
                 href="#"
                 className={classNameForGoPreviousPageBtn}
                 onClick={() => paginate(1)}
+                data-testid="goToFirstPageBtn"
               >
                 {"<<"}
               </a>
@@ -63,6 +65,7 @@ const Pagination = ({
                 href="#"
                 className={classNameForGoPreviousPageBtn}
                 onClick={() => paginate(currentPage - 1)}
+                data-testid="goToPrevPageBtn"
               >
                 {"<"}
               </a>
@@ -76,6 +79,7 @@ const Pagination = ({
                     currentPage === number ? "active" : ""
                   }`}
                   onClick={() => paginate(number)}
+                  data-testid="pages"
                 >
                   {number}
                 </a>
@@ -87,6 +91,7 @@ const Pagination = ({
                 href="#"
                 className={classNameForGoNextPageBtn}
                 onClick={() => paginate(currentPage + 1)}
+                data-testid="goToNextPageBtn"
               >
                 {">"}
               </a>
@@ -96,6 +101,7 @@ const Pagination = ({
                 href="#"
                 className={classNameForGoNextPageBtn}
                 onClick={() => paginate(pageNumbers.length)}
+                data-testid="goToLastPageBtn"
               >
                 {">>"}
               </a>

@@ -87,6 +87,7 @@ const UsersTable = ({
                     payload: { users: [user] },
                   })
                 }
+                data-testid="selectUserCheckBox"
               />
             </td>
             <td>
@@ -96,6 +97,7 @@ const UsersTable = ({
                 readOnly={!user.readyToEdit}
                 className={user.readyToEdit ? "edit-input" : "input-table"}
                 onChange={(e) => setName(e.target.value)}
+                data-testid="userName"
               />
             </td>
             <td>
@@ -124,6 +126,7 @@ const UsersTable = ({
                   alt="save-icon"
                   className="action-icon"
                   onClick={() => updateHandler(user.id)}
+                  data-testid="saveBtn"
                 />
               ) : (
                 <img
@@ -131,6 +134,7 @@ const UsersTable = ({
                   alt="edit-icon"
                   className="action-icon"
                   onClick={() => editHandler(user)}
+                  data-testid="editBtn"
                 />
               )}
               <img
@@ -143,6 +147,7 @@ const UsersTable = ({
                     payload: { userId: user.id },
                   })
                 }
+                data-testid="deleteUser"
               />
             </td>
           </tr>

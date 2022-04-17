@@ -16,11 +16,13 @@ npm start
 
 ## Run Tests
 
-To run the tests, execute
+To run the tests and show test coverage, execute
 
 ```
-npm test
+npm run coverage
 ```
+
+Currently, the test coverage is > 80%
 
 ## Build the app for production
 
