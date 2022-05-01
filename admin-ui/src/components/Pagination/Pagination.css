@@ -29,6 +29,7 @@
 .paginate-container {
   background-color: white;
   padding: 0 0.5rem;
+  border: 1px solid #E7EAF4;
   border-radius: 0.5rem;
 }
 
