@@ -1,0 +1,35 @@
+:root {
+  --primary-color: #406fd3 !important;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.App {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  background-color: #f5f6fb;
+  font-size: 1rem;
+}
+
+.page-navigation {
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+}
+
+.link-active {
+  font-weight: bold;
+}
+
+.page-navigation li:hover {
+  text-decoration: underline;
+}
+
+main {
+  position: relative;
+  top: 8rem;
+  background-color: #f5f6fb;
+}

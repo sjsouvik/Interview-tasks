@@ -2,3 +2,8 @@ node_modules
 .env
 build
 
+sundew-frontend/yarn.lock
+admin-ui/yarn.lock
+admin-ui/.netlify/state.json
+admin-ui/report-integration-test.json
+.DS_Store
