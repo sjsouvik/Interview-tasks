@@ -1,0 +1,9 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+main {
+  position: relative;
+  top: 6.5rem;
+}
