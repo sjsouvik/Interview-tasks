@@ -1,6 +1,7 @@
 node_modules
 .env
 build
-admin-ui
-sundew-frontend
-qed42-frontend/yarn.lock
+.netlify/
+report-integration-test.json
+.DS_Store
+
